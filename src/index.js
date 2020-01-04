@@ -1,9 +1,20 @@
-import "./styles.css";
+// Project Euler: Problem 1: Multiples of 3 and 5
+/* 
+If we list all the natural numbers below 10 
+that are multiples of 3 or 5, we get 3, 5, 6 and 9. 
+The sum of these multiples is 23.
 
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use Parcel to bundle this sandbox, you can find more info about Parcel
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
-`;
+Find the sum of all the multiples of 3 or 5 
+below the provided parameter value number.
+*/
+
+function multiplesOf3and5(number) {
+  let sum = 0;
+  for (let i = 0; i < number; i++) {
+    if (i % 3 === 0 || i % 5 === 0) sum += i;
+  }
+  return sum;
+}
+
+let test = multiplesOf3and5(1000);
+console.log(test);
