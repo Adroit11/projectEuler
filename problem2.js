@@ -5,7 +5,7 @@ function fiboEvenSum(n) {
     b = 0,
     sumEven = 0,
     prev;
-  while (n > 0) {
+  while (n >= 0) {
     prev = a;
     a = a + b;
     b = prev;
