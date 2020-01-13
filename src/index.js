@@ -1,19 +1,28 @@
-// Problem 3: Largest prime factor
+// Problem 4: Largest palindrome product
 
-function largestPrimeFactor(number) {
-  let temp = 0,
-    fac = 2;
-
-  while (number > 1) {
-    if (number % fac === 0) {
-      if (fac > temp) temp = fac;
-      number = number / fac;
-    } else {
-      fac++;
+function largestPalindromeProduct(n) {
+  let largestNum = 0;
+  let start = "9".repeat(n).join("");
+  if (n > 1) {
+    for (let i = start; i > 91; i++) {
+      for (let j = start; j > 91; j++) {
+        let numb = j * i;
+        console.log(numb);
+        if (
+          String(numb) ===
+            String(numb)
+              .split("")
+              .reverse()
+              .join("") &&
+          numb > largestNum
+        ) {
+          largestNum = numb;
+        }
+      }
     }
   }
-  return temp;
+  return largestNum;
 }
 
-let test = largestPrimeFactor(13195);
+let test = largestPalindromeProduct(2);
 console.log(test);
